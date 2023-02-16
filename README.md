@@ -1,92 +1,202 @@
-# VPA
+# vertical-pod-autoscaler
 
+![Version: 6.1.0-bb.0](https://img.shields.io/badge/Version-6.1.0--bb.0-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
 
+Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
-## Getting started
+## Upstream References
+* <https://github.com/kubernetes/autoscaler>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+* <https://github.com/kubernetes/autoscaler>
+* <https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Learn More
+* [Application Overview](docs/overview.md)
+* [Other Documentation](docs/)
 
-## Add your files
+## Pre-Requisites
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+* Kubernetes Cluster deployed
+* Kubernetes config installed in `~/.kube/config`
+* Helm installed
 
+Install Helm
+
+https://helm.sh/docs/intro/install/
+
+## Deployment
+
+* Clone down the repository
+* cd into directory
+```bash
+helm install vertical-pod-autoscaler chart/
 ```
-cd existing_repo
-git remote add origin https://repo1.dso.mil/big-bang/apps/sandbox/vpa.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
+## Values
 
-- [ ] [Set up project integrations](https://repo1.dso.mil/big-bang/apps/sandbox/vpa/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| kubeVersion | string | `""` |  |
+| imagePullSecrets | list | `[]` |  |
+| nameOverride | string | `""` |  |
+| fullnameOverride | string | `""` |  |
+| commonAnnotations | object | `{}` |  |
+| commonLabels | object | `{}` |  |
+| extraDeploy | list | `[]` |  |
+| admissionController.enabled | bool | `true` |  |
+| admissionController.replicaCount | int | `1` |  |
+| admissionController.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-admission-controller"` |  |
+| admissionController.image.tag | string | `"0.13.0"` |  |
+| admissionController.image.pullPolicy | string | `"IfNotPresent"` |  |
+| admissionController.pdb.create | bool | `false` |  |
+| admissionController.pdb.minAvailable | int | `1` |  |
+| admissionController.serviceAccount.create | bool | `true` |  |
+| admissionController.serviceAccount.annotations | object | `{}` |  |
+| admissionController.serviceAccount.name | string | `nil` |  |
+| admissionController.podAnnotations | object | `{}` |  |
+| admissionController.podLabels | object | `{}` |  |
+| admissionController.podSecurityContext.runAsNonRoot | bool | `true` |  |
+| admissionController.podSecurityContext.runAsUser | int | `65534` |  |
+| admissionController.securityContext | object | `{}` |  |
+| admissionController.livenessProbe.enabled | bool | `true` |  |
+| admissionController.livenessProbe.initialDelaySeconds | int | `0` |  |
+| admissionController.livenessProbe.periodSeconds | int | `10` |  |
+| admissionController.livenessProbe.timeoutSeconds | int | `1` |  |
+| admissionController.livenessProbe.failureThreshold | int | `3` |  |
+| admissionController.livenessProbe.successThreshold | int | `1` |  |
+| admissionController.readinessProbe.enabled | bool | `true` |  |
+| admissionController.readinessProbe.initialDelaySeconds | int | `0` |  |
+| admissionController.readinessProbe.periodSeconds | int | `10` |  |
+| admissionController.readinessProbe.timeoutSeconds | int | `1` |  |
+| admissionController.readinessProbe.failureThreshold | int | `3` |  |
+| admissionController.readinessProbe.successThreshold | int | `1` |  |
+| admissionController.service.annotations | object | `{}` |  |
+| admissionController.service.type | string | `"ClusterIP"` |  |
+| admissionController.resources | object | `{}` |  |
+| admissionController.nodeSelector | object | `{}` |  |
+| admissionController.tolerations | list | `[]` |  |
+| admissionController.affinity | object | `{}` |  |
+| admissionController.extraArgs.v | int | `2` |  |
+| admissionController.extraEnvVars | list | `[]` |  |
+| admissionController.extraEnvVarsCM | string | `nil` |  |
+| admissionController.extraEnvVarsSecret | string | `nil` |  |
+| admissionController.metrics.service.annotations | object | `{}` |  |
+| admissionController.metrics.service.type | string | `"ClusterIP"` |  |
+| admissionController.metrics.service.port | int | `8944` |  |
+| admissionController.metrics.serviceMonitor.enabled | bool | `false` |  |
+| admissionController.metrics.serviceMonitor.annotations | object | `{}` |  |
+| admissionController.metrics.serviceMonitor.labels | object | `{}` |  |
+| admissionController.metrics.serviceMonitor.jobLabel | string | `""` |  |
+| admissionController.metrics.serviceMonitor.interval | string | `""` |  |
+| admissionController.metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
+| admissionController.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
+| admissionController.metrics.serviceMonitor.relabelings | list | `[]` |  |
+| admissionController.tls.caCert | string | `""` |  |
+| admissionController.tls.cert | string | `""` |  |
+| admissionController.tls.key | string | `""` |  |
+| admissionController.tls.existingSecret | string | `""` |  |
+| recommender.replicaCount | int | `1` |  |
+| recommender.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-recommender"` |  |
+| recommender.image.tag | string | `"0.13.0"` |  |
+| recommender.image.pullPolicy | string | `"IfNotPresent"` |  |
+| recommender.pdb.create | bool | `false` |  |
+| recommender.pdb.minAvailable | int | `1` |  |
+| recommender.serviceAccount.create | bool | `true` |  |
+| recommender.serviceAccount.annotations | object | `{}` |  |
+| recommender.serviceAccount.name | string | `nil` |  |
+| recommender.podAnnotations | object | `{}` |  |
+| recommender.podLabels | object | `{}` |  |
+| recommender.podSecurityContext.runAsNonRoot | bool | `true` |  |
+| recommender.podSecurityContext.runAsUser | int | `65534` |  |
+| recommender.securityContext | object | `{}` |  |
+| recommender.livenessProbe.enabled | bool | `true` |  |
+| recommender.livenessProbe.initialDelaySeconds | int | `0` |  |
+| recommender.livenessProbe.periodSeconds | int | `10` |  |
+| recommender.livenessProbe.timeoutSeconds | int | `1` |  |
+| recommender.livenessProbe.failureThreshold | int | `3` |  |
+| recommender.livenessProbe.successThreshold | int | `1` |  |
+| recommender.readinessProbe.enabled | bool | `true` |  |
+| recommender.readinessProbe.initialDelaySeconds | int | `0` |  |
+| recommender.readinessProbe.periodSeconds | int | `10` |  |
+| recommender.readinessProbe.timeoutSeconds | int | `1` |  |
+| recommender.readinessProbe.failureThreshold | int | `3` |  |
+| recommender.readinessProbe.successThreshold | int | `1` |  |
+| recommender.resources | object | `{}` |  |
+| recommender.nodeSelector | object | `{}` |  |
+| recommender.tolerations | list | `[]` |  |
+| recommender.affinity | object | `{}` |  |
+| recommender.extraArgs.v | int | `2` |  |
+| recommender.extraEnvVars | list | `[]` |  |
+| recommender.extraEnvVarsCM | string | `nil` |  |
+| recommender.extraEnvVarsSecret | string | `nil` |  |
+| recommender.metrics.service.annotations | object | `{}` |  |
+| recommender.metrics.service.type | string | `"ClusterIP"` |  |
+| recommender.metrics.service.port | int | `8942` |  |
+| recommender.metrics.serviceMonitor.enabled | bool | `false` |  |
+| recommender.metrics.serviceMonitor.annotations | object | `{}` |  |
+| recommender.metrics.serviceMonitor.labels | object | `{}` |  |
+| recommender.metrics.serviceMonitor.jobLabel | string | `""` |  |
+| recommender.metrics.serviceMonitor.interval | string | `""` |  |
+| recommender.metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
+| recommender.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
+| recommender.metrics.serviceMonitor.relabelings | list | `[]` |  |
+| updater.enabled | bool | `true` |  |
+| updater.replicaCount | int | `1` |  |
+| updater.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-updater"` |  |
+| updater.image.tag | string | `"0.13.0"` |  |
+| updater.image.pullPolicy | string | `"IfNotPresent"` |  |
+| updater.pdb.create | bool | `false` |  |
+| updater.pdb.minAvailable | int | `1` |  |
+| updater.serviceAccount.create | bool | `true` |  |
+| updater.serviceAccount.annotations | object | `{}` |  |
+| updater.serviceAccount.name | string | `nil` |  |
+| updater.podAnnotations | object | `{}` |  |
+| updater.podLabels | object | `{}` |  |
+| updater.podSecurityContext.runAsNonRoot | bool | `true` |  |
+| updater.podSecurityContext.runAsUser | int | `65534` |  |
+| updater.securityContext | object | `{}` |  |
+| updater.livenessProbe.enabled | bool | `true` |  |
+| updater.livenessProbe.initialDelaySeconds | int | `0` |  |
+| updater.livenessProbe.periodSeconds | int | `10` |  |
+| updater.livenessProbe.timeoutSeconds | int | `1` |  |
+| updater.livenessProbe.failureThreshold | int | `3` |  |
+| updater.livenessProbe.successThreshold | int | `1` |  |
+| updater.readinessProbe.enabled | bool | `true` |  |
+| updater.readinessProbe.initialDelaySeconds | int | `0` |  |
+| updater.readinessProbe.periodSeconds | int | `10` |  |
+| updater.readinessProbe.timeoutSeconds | int | `1` |  |
+| updater.readinessProbe.failureThreshold | int | `3` |  |
+| updater.readinessProbe.successThreshold | int | `1` |  |
+| updater.resources | object | `{}` |  |
+| updater.nodeSelector | object | `{}` |  |
+| updater.tolerations | list | `[]` |  |
+| updater.affinity | object | `{}` |  |
+| updater.extraArgs.v | int | `2` |  |
+| updater.extraEnvVars | list | `[]` |  |
+| updater.extraEnvVarsCM | string | `nil` |  |
+| updater.extraEnvVarsSecret | string | `nil` |  |
+| updater.metrics.service.annotations | object | `{}` |  |
+| updater.metrics.service.type | string | `"ClusterIP"` |  |
+| updater.metrics.service.port | int | `8943` |  |
+| updater.metrics.serviceMonitor.enabled | bool | `false` |  |
+| updater.metrics.serviceMonitor.annotations | object | `{}` |  |
+| updater.metrics.serviceMonitor.labels | object | `{}` |  |
+| updater.metrics.serviceMonitor.jobLabel | string | `""` |  |
+| updater.metrics.serviceMonitor.interval | string | `""` |  |
+| updater.metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
+| updater.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
+| updater.metrics.serviceMonitor.relabelings | list | `[]` |  |
+| crds.image.repository | string | `"bitnami/kubectl"` |  |
+| crds.image.tag | string | `"1.23.1"` |  |
+| crds.image.pullPolicy | string | `"IfNotPresent"` |  |
+| crds.podAnnotations | object | `{}` |  |
+| crds.nodeSelector | object | `{}` |  |
+| crds.tolerations | list | `[]` |  |
+| crds.affinity | object | `{}` |  |
+| tests.image.repository | string | `"ghcr.io/cowboysysop/pytest"` |  |
+| tests.image.tag | string | `"1.0.35"` |  |
+| tests.image.pullPolicy | string | `"IfNotPresent"` |  |
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.

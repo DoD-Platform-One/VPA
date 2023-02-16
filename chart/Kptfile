@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: chart
+upstream:
+  type: git
+  git:
+    commit: 014d8874efcb4f4efdffb2a6130238b961dc962a
+    repo: https://github.com/cowboysysop/charts
+    directory: /charts/vertical-pod-autoscaler
+    ref: vertical-pod-autoscaler-6.1.0
