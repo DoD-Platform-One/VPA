@@ -1,0 +1,83 @@
+vpa:
+  # -- Toggle deployment of vpa
+  enabled: true
+  git:
+    repo: https://repo1.dso.mil/big-bang/apps/sandbox/vpa.git
+    branch: $CI_COMMIT_BRANCH
+    path: chart
+
+  # -- Flux reconciliation overrides specifically for the Jaeger Package
+  flux: {}
+
+  # -- Redirect the package ingress to a specific Istio Gateway (listed in `istio.gateways`).  The default is "public".
+  ingress:
+    gateway: ""
+
+  # -- Values to pass through to Habor chart: https://repo1.dso.mil/big-bang/apps/sandbox/vpa.git
+  values: {}
+
+  # -- Post Renderers.  See docs/postrenders.md
+  postRenderers: []
+
+# For development
+istio:
+  ingressGateways:
+    passthrough-ingressgateway:
+      enabled: false
+      type: "NodePort"
+
+# Network Policies
+networkPolicies:
+  enabled: false
+
+# Gatekeeper
+gatekeeper:
+  enabled: false
+clusterAuditor:
+  enabled: false
+
+# Logging
+eckoperator:
+  enabled: false
+logging:
+  enabled: false
+fluentbit:
+  enabled: false
+
+# Monitoring
+monitoring:
+  enabled: false
+
+# Other Tools
+jaeger:
+  enabled: false
+kiali:
+  enabled: false
+twistlock:
+  enabled: false
+addons:
+  gitlab:
+    enabled: false
+  keycloak:
+    enabled: false
+  vault:
+    enabled: false
+  nexus:
+    enabled: false
+  mattermost:
+    enabled: false
+  sonarqube:
+    enabled: false
+  gitlabRunner:
+    enabled: false
+  minio:
+    enabled: false
+  anchore:
+    enabled: false
+  mattermostoperator:
+    enabled: false
+  argocd:
+    enabled: false
+  authservice:
+    enabled: false
+
