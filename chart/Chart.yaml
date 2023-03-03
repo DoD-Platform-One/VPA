@@ -10,7 +10,7 @@ name: vertical-pod-autoscaler
 sources:
   - https://github.com/kubernetes/autoscaler
   - https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler
-version: 6.1.0-bb.0
+version: 6.1.0-bb.1
 dependencies:
   - name: common
     version: 1.16.1
@@ -20,3 +20,18 @@ annotations:
     fingerprint: 9E57D2479D48B84463EF491F66D280CE667AD6C8
     url: https://cowboysysop.github.io/charts/pgp-public-key-2022-02-19.asc
   kubeVersion: ">=1.22"
+  helm.sh/images: |
+    - name: recommender
+      image: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender:0.13.0
+    - name: kubectl
+      image: registry1.dso.mil/ironbank/opensource/kubernetes/kubectl:v1.26.1
+    - name: admission-controller
+      condition: admissionController.enabled
+      image: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller:0.13.0
+    - name: updater
+      condition: updater.enabled
+      image: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater:0.13.0
+    - name: pytest
+      condition: tests.enabled
+      image: ghcr.io/cowboysysop/pytest:1.0.35
+

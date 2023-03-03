@@ -1,6 +1,6 @@
 # vertical-pod-autoscaler
 
-![Version: 6.1.0-bb.0](https://img.shields.io/badge/Version-6.1.0--bb.0-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
+![Version: 6.1.0-bb.1](https://img.shields.io/badge/Version-6.1.0--bb.1-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
 
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
@@ -45,7 +45,7 @@ helm install vertical-pod-autoscaler chart/
 | extraDeploy | list | `[]` |  |
 | admissionController.enabled | bool | `true` |  |
 | admissionController.replicaCount | int | `1` |  |
-| admissionController.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-admission-controller"` |  |
+| admissionController.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller"` |  |
 | admissionController.image.tag | string | `"0.13.0"` |  |
 | admissionController.image.pullPolicy | string | `"IfNotPresent"` |  |
 | admissionController.pdb.create | bool | `false` |  |
@@ -96,7 +96,7 @@ helm install vertical-pod-autoscaler chart/
 | admissionController.tls.key | string | `""` |  |
 | admissionController.tls.existingSecret | string | `""` |  |
 | recommender.replicaCount | int | `1` |  |
-| recommender.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-recommender"` |  |
+| recommender.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender"` |  |
 | recommender.image.tag | string | `"0.13.0"` |  |
 | recommender.image.pullPolicy | string | `"IfNotPresent"` |  |
 | recommender.pdb.create | bool | `false` |  |
@@ -142,7 +142,7 @@ helm install vertical-pod-autoscaler chart/
 | recommender.metrics.serviceMonitor.relabelings | list | `[]` |  |
 | updater.enabled | bool | `true` |  |
 | updater.replicaCount | int | `1` |  |
-| updater.image.repository | string | `"k8s.gcr.io/autoscaling/vpa-updater"` |  |
+| updater.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater"` |  |
 | updater.image.tag | string | `"0.13.0"` |  |
 | updater.image.pullPolicy | string | `"IfNotPresent"` |  |
 | updater.pdb.create | bool | `false` |  |
@@ -186,8 +186,8 @@ helm install vertical-pod-autoscaler chart/
 | updater.metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
 | updater.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
 | updater.metrics.serviceMonitor.relabelings | list | `[]` |  |
-| crds.image.repository | string | `"bitnami/kubectl"` |  |
-| crds.image.tag | string | `"1.23.1"` |  |
+| crds.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/kubectl"` |  |
+| crds.image.tag | string | `"v1.26.1"` |  |
 | crds.image.pullPolicy | string | `"IfNotPresent"` |  |
 | crds.podAnnotations | object | `{}` |  |
 | crds.nodeSelector | object | `{}` |  |

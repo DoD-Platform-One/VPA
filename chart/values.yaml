@@ -5,7 +5,8 @@
 # Override Kubernetes version
 kubeVersion: ""
 
-imagePullSecrets: []
+imagePullSecrets:
+    - name: private-registry
 nameOverride: ""
 fullnameOverride: ""
 
@@ -25,7 +26,7 @@ admissionController:
   replicaCount: 1
 
   image:
-    repository: k8s.gcr.io/autoscaling/vpa-admission-controller
+    repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller
     tag: 0.13.0
     pullPolicy: IfNotPresent
 
@@ -199,7 +200,7 @@ recommender:
   replicaCount: 1
 
   image:
-    repository: k8s.gcr.io/autoscaling/vpa-recommender
+    repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender
     tag: 0.13.0
     pullPolicy: IfNotPresent
 
@@ -386,7 +387,7 @@ updater:
   replicaCount: 1
 
   image:
-    repository: k8s.gcr.io/autoscaling/vpa-updater
+    repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater
     tag: 0.13.0
     pullPolicy: IfNotPresent
 
@@ -547,10 +548,10 @@ updater:
 crds:
   image:
     # Image name
-    repository: bitnami/kubectl
+    repository: registry1.dso.mil/ironbank/opensource/kubernetes/kubectl
 
     # Image tag
-    tag: 1.23.1
+    tag: v1.26.1
 
     # Image pull policy
     pullPolicy: IfNotPresent
@@ -565,6 +566,7 @@ crds:
   affinity: {}
 
 tests:
+  enabled: false
   image:
     # Image name
     repository: ghcr.io/cowboysysop/pytest
