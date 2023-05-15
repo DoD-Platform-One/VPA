@@ -1,6 +1,6 @@
 # vertical-pod-autoscaler
 
-![Version: 6.1.0-bb.1](https://img.shields.io/badge/Version-6.1.0--bb.1-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
+![Version: 6.1.0-bb.2](https://img.shields.io/badge/Version-6.1.0--bb.2-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
 
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
@@ -37,7 +37,7 @@ helm install vertical-pod-autoscaler chart/
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | kubeVersion | string | `""` |  |
-| imagePullSecrets | list | `[]` |  |
+| imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nameOverride | string | `""` |  |
 | fullnameOverride | string | `""` |  |
 | commonAnnotations | object | `{}` |  |
@@ -193,6 +193,7 @@ helm install vertical-pod-autoscaler chart/
 | crds.nodeSelector | object | `{}` |  |
 | crds.tolerations | list | `[]` |  |
 | crds.affinity | object | `{}` |  |
+| tests.enabled | bool | `false` |  |
 | tests.image.repository | string | `"ghcr.io/cowboysysop/pytest"` |  |
 | tests.image.tag | string | `"1.0.35"` |  |
 | tests.image.pullPolicy | string | `"IfNotPresent"` |  |
