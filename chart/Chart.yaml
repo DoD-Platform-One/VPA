@@ -1,7 +1,7 @@
 apiVersion: v2
 name: vertical-pod-autoscaler
 description: Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
-version: 6.1.0-bb.3
+version: 6.1.0-bb.4
 appVersion: 0.13.0
 home: https://github.com/kubernetes/autoscaler
 icon: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg
@@ -26,8 +26,8 @@ annotations:
   helm.sh/images: |
     - name: recommender
       image: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender:0.13.0
-    - name: kubectl
-      image: registry1.dso.mil/ironbank/opensource/kubernetes/kubectl:1.27.3
+    - name: base
+      image: registry1.dso.mil/ironbank/big-bang/base:2.0.0
     - name: admission-controller
       condition: admissionController.enabled
       image: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller:0.13.0

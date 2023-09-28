@@ -548,23 +548,26 @@ updater:
 crds:
   image:
     # Image name
-    repository: registry1.dso.mil/ironbank/opensource/kubernetes/kubectl
+    repository: registry1.dso.mil/ironbank/big-bang/base
 
     # Image tag
-    tag: 1.27.3
+    tag: 2.0.0
 
     # Image pull policy
     pullPolicy: IfNotPresent
 
   # Additional pod annotations
   podAnnotations: {}
-
+  
   nodeSelector: {}
 
   tolerations: []
 
   affinity: {}
 
+istio:
+  enabled: false
+  
 tests:
   enabled: false
   image:

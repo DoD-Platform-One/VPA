@@ -35,11 +35,15 @@ spec:
         - name: kubectl
           image: "{{ .Values.crds.image.repository }}:{{ .Values.crds.image.tag }}"
           imagePullPolicy: {{ .Values.crds.image.pullPolicy }}
-          args:
-            - apply
-            {{- range $path, $_ := .Files.Glob  "files/crds/*" }}
-            - --filename=/config/{{ base $path }}
-            {{- end }}
+          command:
+          - /bin/bash
+          - -c
+          - |
+            kubectl apply {{- range $path, $_ := $.Files.Glob  "files/crds/*" }} --filename=/config/{{ base $path }} {{ end }}
+            {{- if .Values.istio.enabled }}
+              until curl -fsI http://localhost:15021/healthz/ready; do echo \"Waiting for Istio sidecar proxy...\"; sleep 3; done && sleep 5 && echo \"Stopping the istio proxy...\" && curl -X POST http://localhost:15020/quitquitquit
+            {{- end}}
+            exit 0
           volumeMounts:
             - name: config
               mountPath: /config
