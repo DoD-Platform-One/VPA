@@ -1,6 +1,6 @@
 # vertical-pod-autoscaler
 
-![Version: 6.1.0-bb.3](https://img.shields.io/badge/Version-6.1.0--bb.3-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
+![Version: 6.1.0-bb.4](https://img.shields.io/badge/Version-6.1.0--bb.4-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
 
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
@@ -186,13 +186,14 @@ helm install vertical-pod-autoscaler chart/
 | updater.metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
 | updater.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
 | updater.metrics.serviceMonitor.relabelings | list | `[]` |  |
-| crds.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/kubectl"` |  |
-| crds.image.tag | string | `"1.27.3"` |  |
+| crds.image.repository | string | `"registry1.dso.mil/ironbank/big-bang/base"` |  |
+| crds.image.tag | string | `"2.0.0"` |  |
 | crds.image.pullPolicy | string | `"IfNotPresent"` |  |
 | crds.podAnnotations | object | `{}` |  |
 | crds.nodeSelector | object | `{}` |  |
 | crds.tolerations | list | `[]` |  |
 | crds.affinity | object | `{}` |  |
+| istio.enabled | bool | `false` |  |
 | tests.enabled | bool | `false` |  |
 | tests.image.repository | string | `"ghcr.io/cowboysysop/pytest"` |  |
 | tests.image.tag | string | `"1.0.38"` |  |
