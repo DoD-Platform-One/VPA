@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:72f38cc9-9954-4430-b10d-96f857741de4",
+  "serialNumber": "urn:uuid:397ca129-0b42-4353-a4c4-98505efaf08b",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -1944,7 +1944,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender@0.13.0:pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b?package-id=fff257f13f525d44",
           "name": "golang.org/x/net",
           "version": "v0.0.0-20220722155237-a158d28d115b",
-          "cpe": "cpe:2.3:a:golang:x\\/net:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:networking:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:go:*:*",
           "purl": "pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b",
           "properties": [
             {
@@ -2148,7 +2148,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender@0.13.0:pkg:golang/golang.org/x/text@v0.3.7?package-id=f1495ce3d55d170c",
           "name": "golang.org/x/text",
           "version": "v0.3.7",
-          "cpe": "cpe:2.3:a:golang:x\\/text:v0.3.7:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:text:v0.3.7:*:*:*:*:*:*:*",
           "purl": "pkg:golang/golang.org/x/text@v0.3.7",
           "properties": [
             {
@@ -2396,6 +2396,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender@0.13.0:pkg:golang/gopkg.in/yaml.v3@v3.0.1?package-id=f9e5094ff0735fa3",
           "name": "gopkg.in/yaml.v3",
           "version": "v3.0.1",
+          "cpe": "cpe:2.3:a:yaml_project:yaml:v3.0.1:*:*:*:*:go:*:*",
           "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
           "properties": [
             {
@@ -8276,7 +8277,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/big-bang/base@2.0.0:pkg:golang/golang.org/x/net@v0.15.0?package-id=679cc237eb4cc14b",
           "name": "golang.org/x/net",
           "version": "v0.15.0",
-          "cpe": "cpe:2.3:a:golang:x\\/net:v0.15.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:networking:v0.15.0:*:*:*:*:go:*:*",
           "purl": "pkg:golang/golang.org/x/net@v0.15.0",
           "properties": [
             {
@@ -8376,7 +8377,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/big-bang/base@2.0.0:pkg:golang/golang.org/x/text@v0.13.0?package-id=ca0d6ff56f2f6222",
           "name": "golang.org/x/text",
           "version": "v0.13.0",
-          "cpe": "cpe:2.3:a:golang:x\\/text:v0.13.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:text:v0.13.0:*:*:*:*:*:*:*",
           "purl": "pkg:golang/golang.org/x/text@v0.13.0",
           "properties": [
             {
@@ -8525,6 +8526,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/big-bang/base@2.0.0:pkg:golang/gopkg.in/yaml.v3@v3.0.1?package-id=6d689b3325769664",
           "name": "gopkg.in/yaml.v3",
           "version": "v3.0.1",
+          "cpe": "cpe:2.3:a:yaml_project:yaml:v3.0.1:*:*:*:*:go:*:*",
           "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
           "properties": [
             {
@@ -18566,7 +18568,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:kenneth_reitz_project:python-requests:2.20.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:python:requests:2.20.0:*:*:*:*:*:*:*",
           "purl": "pkg:pypi/requests@2.20.0",
           "properties": [
             {
@@ -18584,122 +18586,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python-requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python_requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:requests:2.20.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:requests:2.20.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
@@ -19290,7 +19176,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:python_packaging_authority_project:python-setuptools:39.2.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:python:setuptools:39.2.0:*:*:*:*:*:*:*",
           "purl": "pkg:pypi/setuptools@39.2.0",
           "properties": [
             {
@@ -19308,134 +19194,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority_project:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority_project:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:setuptools:39.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:setuptools:39.2.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
@@ -23462,7 +23220,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller@0.13.0:pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b?package-id=542626cc45b72389",
           "name": "golang.org/x/net",
           "version": "v0.0.0-20220722155237-a158d28d115b",
-          "cpe": "cpe:2.3:a:golang:x\\/net:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:networking:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:go:*:*",
           "purl": "pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b",
           "properties": [
             {
@@ -23666,7 +23424,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller@0.13.0:pkg:golang/golang.org/x/text@v0.3.7?package-id=1a2928bb7b07cd55",
           "name": "golang.org/x/text",
           "version": "v0.3.7",
-          "cpe": "cpe:2.3:a:golang:x\\/text:v0.3.7:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:text:v0.3.7:*:*:*:*:*:*:*",
           "purl": "pkg:golang/golang.org/x/text@v0.3.7",
           "properties": [
             {
@@ -23914,6 +23672,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller@0.13.0:pkg:golang/gopkg.in/yaml.v3@v3.0.1?package-id=dcf474339ff2842d",
           "name": "gopkg.in/yaml.v3",
           "version": "v3.0.1",
+          "cpe": "cpe:2.3:a:yaml_project:yaml:v3.0.1:*:*:*:*:go:*:*",
           "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
           "properties": [
             {
@@ -26538,7 +26297,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater@0.13.0:pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b?package-id=7770169292bf7b23",
           "name": "golang.org/x/net",
           "version": "v0.0.0-20220722155237-a158d28d115b",
-          "cpe": "cpe:2.3:a:golang:x\\/net:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:networking:v0.0.0-20220722155237-a158d28d115b:*:*:*:*:go:*:*",
           "purl": "pkg:golang/golang.org/x/net@v0.0.0-20220722155237-a158d28d115b",
           "properties": [
             {
@@ -26742,7 +26501,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater@0.13.0:pkg:golang/golang.org/x/text@v0.3.7?package-id=48ba6f24c905cbeb",
           "name": "golang.org/x/text",
           "version": "v0.3.7",
-          "cpe": "cpe:2.3:a:golang:x\\/text:v0.3.7:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:text:v0.3.7:*:*:*:*:*:*:*",
           "purl": "pkg:golang/golang.org/x/text@v0.3.7",
           "properties": [
             {
@@ -26990,6 +26749,7 @@
           "bom-ref": "registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater@0.13.0:pkg:golang/gopkg.in/yaml.v3@v3.0.1?package-id=d6b96c2d51301231",
           "name": "gopkg.in/yaml.v3",
           "version": "v3.0.1",
+          "cpe": "cpe:2.3:a:yaml_project:yaml:v3.0.1:*:*:*:*:go:*:*",
           "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
           "properties": [
             {
@@ -29453,7 +29213,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:kenneth_reitz_project:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:kennethreitz:certifi:2022.12.7:*:*:*:*:python:*:*",
           "purl": "pkg:pypi/certifi@2022.12.7",
           "properties": [
             {
@@ -29471,122 +29231,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-certifi:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_certifi:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python-certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python_certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:certifi:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:certifi:2022.12.7:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:certifi:2022.12.7:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
@@ -68176,7 +67820,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:protobuf\\@googlegroups_com_project:python-protobuf:4.22.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:google:protobuf-python:4.22.0:*:*:*:*:*:*:*",
           "purl": "pkg:pypi/protobuf@4.22.0",
           "properties": [
             {
@@ -68194,110 +67838,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_com_project:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_comproject:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_comproject:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_com_project:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_com:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_com:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_comproject:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf\\@googlegroups_com:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf_project:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf_project:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobufproject:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobufproject:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-protobuf:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-protobuf:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_protobuf:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_protobuf:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf_project:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobufproject:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-protobuf:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_protobuf:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:protobuf:protobuf:4.22.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:protobuf:4.22.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
@@ -69235,7 +68775,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:kenneth_reitz_project:python-requests:2.28.2:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:python:requests:2.28.2:*:*:*:*:*:*:*",
           "purl": "pkg:pypi/requests@2.28.2",
           "properties": [
             {
@@ -69253,122 +68793,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz_project:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitzproject:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-requests:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_requests:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:kenneth_reitz:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me_project:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python-requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:python_requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:meproject:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:requests:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:requests:2.28.2:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:me:requests:2.28.2:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
@@ -69565,7 +68989,7 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:python_packaging_authority_project:python-setuptools:63.2.0:*:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:python:setuptools:63.2.0:*:*:*:*:*:*:*",
           "purl": "pkg:pypi/setuptools@63.2.0",
           "properties": [
             {
@@ -69583,134 +69007,6 @@
             {
               "name": "syft:package:metadataType",
               "value": "python-package"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority_project:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority_project:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authorityproject:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_packaging_authority:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig_project:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sigproject:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python-setuptools:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python_setuptools:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils-sig:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:distutils_sig:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python-setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:python_setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:setuptools:setuptools:63.2.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python:setuptools:63.2.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
