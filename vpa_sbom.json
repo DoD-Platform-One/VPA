@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:5746cd41-79b0-4fd5-a57b-81a06126722c",
+  "serialNumber": "urn:uuid:537cf164-c2b9-459c-9b5d-6bb31acfc87b",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -75032,6 +75032,12 @@
     },
     {
       "ref": "ghcr.io/cowboysysop/pytest@1.0.38:pkg:deb/debian/zlib1g@1:1.2.11.dfsg-2%2Bdeb11u2?arch=amd64\u0026upstream=zlib\u0026distro=debian-11\u0026package-id=4aef186fd1228e90",
+      "dependsOn": [
+        "ghcr.io/cowboysysop/pytest@1.0.38:pkg:deb/debian/libc6@2.31-13%2Bdeb11u5?arch=amd64\u0026upstream=glibc\u0026distro=debian-11\u0026package-id=0044d2a48e586853"
+      ]
+    },
+    {
+      "ref": "ghcr.io/cowboysysop/pytest@1.0.38:pkg:generic/python@3.10.8?package-id=1aed368cbb000f5c",
       "dependsOn": [
         "ghcr.io/cowboysysop/pytest@1.0.38:pkg:deb/debian/libc6@2.31-13%2Bdeb11u5?arch=amd64\u0026upstream=glibc\u0026distro=debian-11\u0026package-id=0044d2a48e586853"
       ]
