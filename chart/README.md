@@ -17,9 +17,9 @@ This chart bootstraps a Vertical Pod Autoscaler deployment on a [Kubernetes](htt
 
 ## Prerequisites
 
-- Kubernetes >= 1.22
+- Kubernetes >= 1.24
 - Metrics Server >= 0.2 (you can use the [bitnami/metrics-server](https://artifacthub.io/packages/helm/bitnami/metrics-server) chart)
-- Helm >= 3.1
+- Helm >= 3.9
 
 ## Installing
 
@@ -43,6 +43,27 @@ $ helm upgrade my-release cowboysysop/vertical-pod-autoscaler
 The command upgrades the existing `my-release` deployment with the most latest release of the chart.
 
 **TIP**: Use `helm repo update` to update information on available charts in the chart repositories.
+
+### Upgrading to version 9.0.0
+
+The chart is now tested with Kubernetes >= 1.24 and Helm >= 3.9.
+
+Future upgrades may introduce undetected breaking changes if you continue to use older versions.
+
+### Upgrading to version 8.0.0
+
+Some parameters related to port management have been modified:
+
+- Parameter `admissionController.metrics.service.port` has been renamed `admissionController.metrics.service.ports.metrics`.
+- Parameter `recommender.metrics.service.port` has been renamed `recommender.metrics.service.ports.metrics`.
+- Parameter `updater.metrics.service.port` has been renamed `updater.metrics.service.ports.metrics`.
+
+### Upgrading to version 7.0.0
+
+Some parameters related to image management have been modified:
+
+- Registry prefix in `image.repository` parameters is now configured in `image.registry`.
+- Parameter `imagePullSecrets` has been renamed `global.imagePullSecrets`.
 
 ### Upgrading to version 6.0.0
 
@@ -73,12 +94,6 @@ The port names have been changed to be compatible with Istio service mesh.
 
 ## Uninstalling
 
-Delete the `vpa-webhook-config` mutating webhook configuration automatically created by Vertical Pod Autoscaler admission controller component using:
-
-```bash
-$ kubectl delete mutatingwebhookconfiguration vpa-webhook-config
-```
-
 Uninstall the `my-release` deployment using:
 
 ```bash
@@ -88,6 +103,12 @@ $ helm uninstall my-release
 The command deletes the release named `my-release` and frees all the kubernetes resources associated with the release.
 
 **TIP**: Specify the `--purge` argument to the above command to remove the release from the store and make its name free for later use.
+
+Delete the `vpa-webhook-config` mutating webhook configuration automatically created by Vertical Pod Autoscaler admission controller component using:
+
+```bash
+$ kubectl delete mutatingwebhookconfiguration vpa-webhook-config
+```
 
 Optionally, delete the custom resource definitions created by the chart using:
 
@@ -100,16 +121,20 @@ $ kubectl delete crd verticalpodautoscalercheckpoints.autoscaling.k8s.io
 
 ## Configuration
 
-The following tables lists all the configurable parameters expose by the chart and their default values.
+### Global parameters
+
+| Name                      | Description                                     | Default |
+| ------------------------- | ----------------------------------------------- | ------- |
+| `global.imageRegistry`    | Global Docker image registry                    | `""`    |
+| `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]`    |
 
 ### Common parameters
 
 | Name                | Description                                                                                                  | Default |
-|---------------------|--------------------------------------------------------------------------------------------------------------|---------|
+| ------------------- | ------------------------------------------------------------------------------------------------------------ | ------- |
 | `kubeVersion`       | Override Kubernetes version                                                                                  | `""`    |
-| `imagePullSecrets`  | Docker registry secret names as an array                                                                     | `[]`    |
-| `nameOverride`      | Partially override `vertical-pod-autoscaler.fullname` template with a string (will prepend the release name) | `nil`   |
-| `fullnameOverride`  | Fully override `vertical-pod-autoscaler.fullname` template with a string                                     | `nil`   |
+| `nameOverride`      | Partially override `vertical-pod-autoscaler.fullname` template with a string (will prepend the release name) | `""`    |
+| `fullnameOverride`  | Fully override `vertical-pod-autoscaler.fullname` template with a string                                     | `""`    |
 | `commonAnnotations` | Annotations to add to all deployed objects                                                                   | `{}`    |
 | `commonLabels`      | Labels to add to all deployed objects                                                                        | `{}`    |
 | `extraDeploy`       | Array of extra objects to deploy with the release                                                            | `[]`    |
@@ -121,7 +146,7 @@ The following tables lists all the configurable parameters expose by the chart a
 | `admissionController.enabled`                                  | Enable the component                                                                                  | `true`                                                                              |
 | `admissionController.replicaCount`                             | Number of replicas                                                                                    | `1`                                                                                 |
 | `admissionController.image.repository`                         | Image name                                                                                            | `k8s.gcr.io/autoscaling/vpa-admission-controller`                                   |
-| `admissionController.image.tag`                                | Image tag                                                                                             | `0.13.0`                                                                            |
+| `admissionController.image.tag`                                | Image tag                                                                                             | `1.1.1`                                                                            |
 | `admissionController.image.pullPolicy`                         | Image pull policy                                                                                     | `IfNotPresent`                                                                      |
 | `admissionController.pdb.create`                               | Specifies whether a pod disruption budget should be created                                           | `false`                                                                             |
 | `admissionController.pdb.minAvailable`                         | Minimum number/percentage of pods that should remain scheduled                                        | `1`                                                                                 |
@@ -180,7 +205,7 @@ The following tables lists all the configurable parameters expose by the chart a
 |----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | `recommender.replicaCount`                                     | Number of replicas                                                                                    | `1`                                                                         |
 | `recommender.image.repository`                                 | Image name                                                                                            | `k8s.gcr.io/autoscaling/vpa-recommender`                                    |
-| `recommender.image.tag`                                        | Image tag                                                                                             | `0.13.0`                                                                    |
+| `recommender.image.tag`                                        | Image tag                                                                                             | `1.1.1`                                                                    |
 | `recommender.image.pullPolicy`                                 | Image pull policy                                                                                     | `IfNotPresent`                                                              |
 | `recommender.pdb.create`                                       | Specifies whether a pod disruption budget should be created                                           | `false`                                                                     |
 | `recommender.pdb.minAvailable`                                 | Minimum number/percentage of pods that should remain scheduled                                        | `1`                                                                         |
@@ -233,7 +258,7 @@ The following tables lists all the configurable parameters expose by the chart a
 | `updater.enabled`                                              | Enable the component                                                                                  | `true`                                                                  |
 | `updater.replicaCount`                                         | Number of replicas                                                                                    | `1`                                                                     |
 | `updater.image.repository`                                     | Image name                                                                                            | `k8s.gcr.io/autoscaling/vpa-updater`                                    |
-| `updater.image.tag`                                            | Image tag                                                                                             | `0.13.0`                                                                |
+| `updater.image.tag`                                            | Image tag                                                                                             | `1.1.1`                                                                |
 | `updater.image.pullPolicy`                                     | Image pull policy                                                                                     | `IfNotPresent`                                                          |
 | `updater.pdb.create`                                           | Specifies whether a pod disruption budget should be created                                           | `false`                                                                 |
 | `updater.pdb.minAvailable`                                     | Minimum number/percentage of pods that should remain scheduled                                        | `1`                                                                     |
@@ -281,25 +306,35 @@ The following tables lists all the configurable parameters expose by the chart a
 
 ### CRDs parameters
 
-| Name                    | Description                    | Default           |
-|-------------------------|--------------------------------|-------------------|
-| `crds.image.repository` | Image name                     | `bitnami/kubectl` |
-| `crds.image.tag`        | Image tag                      | `1.23.1`          |
-| `crds.image.pullPolicy` | Image pull policy              | `IfNotPresent`    |
-| `crds.podAnnotations`   | Additional pod annotations     | `{}`              |
-| `crds.nodeSelector`     | Node labels for pod assignment | `{}`              |
-| `crds.tolerations`      | Tolerations for pod assignment | `[]`              |
-| `crds.affinity`         | Map of node/pod affinities     | `{}`              |
+| Name                                   | Description                                            | Default           |
+| -------------------------------------- | ------------------------------------------------------ | ----------------- |
+| `crds.image.registry`                  | Image registry                                         | `docker.io`       |
+| `crds.image.repository`                | Image repository                                       | `bitnami/kubectl` |
+| `crds.image.tag`                       | Image tag                                              | `1.29.3`          |
+| `crds.image.digest`                    | Image digest                                           | `""`              |
+| `crds.image.pullPolicy`                | Image pull policy                                      | `IfNotPresent`    |
+| `crds.podAnnotations`                  | Additional pod annotations                             | `{}`              |
+| `crds.podLabels`                       | Additional pod labels                                  | `{}`              |
+| `crds.podSecurityContext`              | Pod security context                                   |                   |
+| `crds.podSecurityContext.runAsNonRoot` | Whether the container must run as a non-root user      | `true`            |
+| `crds.podSecurityContext.runAsUser`    | The UID to run the entrypoint of the container process | `1001`            |
+| `crds.securityContext`                 | Container security context                             | `{}`              |
+| `crds.resources`                       | CPU/Memory resource requests/limits                    | `{}`              |
+| `crds.nodeSelector`                    | Node labels for pod assignment                         | `{}`              |
+| `crds.tolerations`                     | Tolerations for pod assignment                         | `[]`              |
+| `crds.affinity`                        | Map of node/pod affinities                             | `{}`              |
 
 ### Tests parameters
 
-| Name                     | Description       | Default                      |
-|--------------------------|-------------------|------------------------------|
-| `tests.image.repository` | Image name        | `ghcr.io/cowboysysop/pytest` |
-| `tests.image.tag`        | Image tag         | `1.0.35`                    |
-| `tests.image.pullPolicy` | Image pull policy | `IfNotPresent`               |
+| Name                     | Description       | Default              |
+| ------------------------ | ----------------- | -------------------- |
+| `tests.image.registry`   | Image registry    | `ghcr.io`            |
+| `tests.image.repository` | Image repository  | `cowboysysop/pytest` |
+| `tests.image.tag`        | Image tag         | `1.0.41`             |
+| `tests.image.digest`     | Image digest      | `""`                 |
+| `tests.image.pullPolicy` | Image pull policy | `IfNotPresent`       |
 
-### Setting parameters
+## Setting parameters
 
 Specify the parameters you which to customize using the `--set` argument to the `helm install` command. For instance,
 
