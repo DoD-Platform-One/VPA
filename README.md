@@ -1,6 +1,6 @@
 # vertical-pod-autoscaler
 
-![Version: 6.1.0-bb.4](https://img.shields.io/badge/Version-6.1.0--bb.4-informational?style=flat-square) ![AppVersion: 0.13.0](https://img.shields.io/badge/AppVersion-0.13.0-informational?style=flat-square)
+![Version: 9.8.1-bb.0](https://img.shields.io/badge/Version-9.8.1-bb.0-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square)
 
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
@@ -46,7 +46,7 @@ helm install vertical-pod-autoscaler chart/
 | admissionController.enabled | bool | `true` |  |
 | admissionController.replicaCount | int | `1` |  |
 | admissionController.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller"` |  |
-| admissionController.image.tag | string | `"0.13.0"` |  |
+| admissionController.image.tag | string | `"1.1.1"` |  |
 | admissionController.image.pullPolicy | string | `"IfNotPresent"` |  |
 | admissionController.pdb.create | bool | `false` |  |
 | admissionController.pdb.minAvailable | int | `1` |  |
@@ -97,7 +97,7 @@ helm install vertical-pod-autoscaler chart/
 | admissionController.tls.existingSecret | string | `""` |  |
 | recommender.replicaCount | int | `1` |  |
 | recommender.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender"` |  |
-| recommender.image.tag | string | `"0.13.0"` |  |
+| recommender.image.tag | string | `"1.1.1"` |  |
 | recommender.image.pullPolicy | string | `"IfNotPresent"` |  |
 | recommender.pdb.create | bool | `false` |  |
 | recommender.pdb.minAvailable | int | `1` |  |
@@ -143,7 +143,7 @@ helm install vertical-pod-autoscaler chart/
 | updater.enabled | bool | `true` |  |
 | updater.replicaCount | int | `1` |  |
 | updater.image.repository | string | `"registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater"` |  |
-| updater.image.tag | string | `"0.13.0"` |  |
+| updater.image.tag | string | `"1.1.1"` |  |
 | updater.image.pullPolicy | string | `"IfNotPresent"` |  |
 | updater.pdb.create | bool | `false` |  |
 | updater.pdb.minAvailable | int | `1` |  |

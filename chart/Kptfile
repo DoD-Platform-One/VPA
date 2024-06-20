@@ -5,7 +5,7 @@ metadata:
 upstream:
   type: git
   git:
-    commit: 014d8874efcb4f4efdffb2a6130238b961dc962a
+    commit: b39c07b309c0a209d2488c401ee78842d7f3ca12
     repo: https://github.com/cowboysysop/charts
     directory: /charts/vertical-pod-autoscaler
-    ref: vertical-pod-autoscaler-6.1.0
+    ref: vertical-pod-autoscaler-9.8.1

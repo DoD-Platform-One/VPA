@@ -27,7 +27,7 @@ admissionController:
 
   image:
     repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/admission-controller
-    tag: 0.13.0
+    tag: 1.1.1
     pullPolicy: IfNotPresent
 
   pdb:
@@ -201,7 +201,7 @@ recommender:
 
   image:
     repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/recommender
-    tag: 0.13.0
+    tag: 1.1.1
     pullPolicy: IfNotPresent
 
   pdb:
@@ -388,7 +388,7 @@ updater:
 
   image:
     repository: registry1.dso.mil/ironbank/opensource/kubernetes/autoscaler/updater
-    tag: 0.13.0
+    tag: 1.1.1
     pullPolicy: IfNotPresent
 
   pdb:
