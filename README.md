@@ -5,12 +5,14 @@
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
 ## Upstream References
+
 * <https://github.com/kubernetes/autoscaler>
 
 * <https://github.com/kubernetes/autoscaler>
 * <https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler>
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -22,12 +24,13 @@ Set of components that automatically adjust the amount of CPU and memory request
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install vertical-pod-autoscaler chart/
 ```
