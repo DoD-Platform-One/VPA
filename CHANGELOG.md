@@ -2,6 +2,14 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+---
+
+## [9.8.2-bb.0] - 2024-07-18
+
+### Added
+
+- Upgrade VPA package vertical-pod-autoscaler
+
 ## [9.8.1-bb.0] - 2024-06-10
 
 ### Added
@@ -16,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [6.1.0-bb.3] - 2023-07-07
 
-### Update
+### Added
 
 - Update pytest 1.0.35 -> 1.0.38
 - Update kubectl v1.26.1 -> 1.27.3
