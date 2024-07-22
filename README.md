@@ -1,34 +1,38 @@
 # vertical-pod-autoscaler
 
-![Version: 9.8.1-bb.0](https://img.shields.io/badge/Version-9.8.1-bb.0-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square)
+![Version: 9.8.2-bb.0](https://img.shields.io/badge/Version-9.8.2-bb.0-informational?style=flat-square) ![AppVersion: 1.1.2](https://img.shields.io/badge/AppVersion-1.1.2-informational?style=flat-square)
 
 Set of components that automatically adjust the amount of CPU and memory requested by pods running in the Kubernetes Cluster
 
 ## Upstream References
 
-* <https://github.com/kubernetes/autoscaler>
+* [https://github.com/kubernet](https://github.com/kubernetes/autoscaler)
 
-* <https://github.com/kubernetes/autoscaler>
-* <https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler>
+* [https://github.com/kubernet](https://github.com/kubernetes/autoscaler)
+* [https://github.com/cowboysysop](https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler)
 
 ## Learn More
 
 * [Application Overview](docs/overview.md)
+
 * [Other Documentation](docs/)
 
 ## Pre-Requisites
 
 * Kubernetes Cluster deployed
+
 * Kubernetes config installed in `~/.kube/config`
+
 * Helm installed
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+`https://helm.sh/docs/intro/install/`
 
 ## Deployment
 
 * Clone down the repository
+
 * cd into directory
 
 ```bash
