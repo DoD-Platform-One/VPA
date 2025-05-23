@@ -1,5 +1,7 @@
 # Modifications made to upstream chart
-This is a high-level list of modifications that Big Bang has made to the upstream helm chart. You can use this as as cross-check to make sure that no modifications were lost during an upgrade process.
+This is a high-level list of modifications that Big Bang has made to the [upstream helm chart](https://github.com/cowboysysop/charts/tree/master/charts/vertical-pod-autoscaler). 
+
+You can use this as as cross-check to make sure that no modifications were lost during an upgrade process.
 
 ## chart/values.yaml
 - Big Bang additions at the bottom of the values file
