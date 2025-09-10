@@ -1,23 +1,38 @@
 {
-    "baseBranches": ["main"],
+    "baseBranches": [
+        "main"
+    ],
     "configWarningReuseIssue": false,
     "dependencyDashboard": true,
     "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
     "dependencyDashboardTitle": "Renovate: Upgrade VPA Package Dependencies",
     "draftPR": true,
-    "enabledManagers": ["helm-values","regex"],
-    "ignorePaths": ["chart/charts/**"],
-    "labels": ["vpa","renovate"],
+    "enabledManagers": [
+        "helm-values",
+        "custom.regex"
+    ],
+    "ignorePaths": [
+        "chart/charts/**"
+    ],
+    "labels": [
+        "vpa",
+        "renovate"
+    ],
     "commitMessagePrefix": "SKIP UPDATE CHECK",
     "packageRules": [
         {
-            "matchDatasources": ["docker"],
+            "matchDatasources": [
+                "docker"
+            ],
             "groupName": "Ironbank"
         }
     ],
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)"
             ],
@@ -25,7 +40,10 @@
             "datasourceTemplate": "docker"
         },
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "- Recommender:\\s*(?<currentValue>.+)"
             ],
@@ -34,7 +52,10 @@
             "registryUrlTemplate": "https://registry1.dso.mil"
         },
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "- Admission-Controller:\\s*(?<currentValue>.+)"
             ],
@@ -43,14 +64,20 @@
             "registryUrlTemplate": "https://registry1.dso.mil"
         },
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "image:[^\\S\\r\\n]+(?<depName>.+):(?<currentValue>.+)"
             ],
             "datasourceTemplate": "docker"
         },
         {
-            "fileMatch": ["^chart/values\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/values\\.yaml$"
+            ],
             "matchStrings": [
                 "repository:\\s*(?<depName>.+)\n.*\n\\s+tag:\\s*(?<currentValue>.+)"
             ],
