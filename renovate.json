@@ -30,8 +30,8 @@
     "customManagers": [
         {
             "customType": "regex",
-            "fileMatch": [
-                "^chart/Chart\\.yaml$"
+            "managerFilePatterns": [
+                "/^chart/Chart\\.yaml$/"
             ],
             "matchStrings": [
                 "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)"
@@ -41,8 +41,8 @@
         },
         {
             "customType": "regex",
-            "fileMatch": [
-                "^chart/Chart\\.yaml$"
+            "managerFilePatterns": [
+                "/^chart/Chart\\.yaml$/"
             ],
             "matchStrings": [
                 "- Recommender:\\s*(?<currentValue>.+)"
@@ -53,8 +53,8 @@
         },
         {
             "customType": "regex",
-            "fileMatch": [
-                "^chart/Chart\\.yaml$"
+            "managerFilePatterns": [
+                "/^chart/Chart\\.yaml$/"
             ],
             "matchStrings": [
                 "- Admission-Controller:\\s*(?<currentValue>.+)"
@@ -65,8 +65,8 @@
         },
         {
             "customType": "regex",
-            "fileMatch": [
-                "^chart/Chart\\.yaml$"
+            "managerFilePatterns": [
+                "/^chart/Chart\\.yaml$/"
             ],
             "matchStrings": [
                 "image:[^\\S\\r\\n]+(?<depName>.+):(?<currentValue>.+)"
@@ -75,8 +75,8 @@
         },
         {
             "customType": "regex",
-            "fileMatch": [
-                "^chart/values\\.yaml$"
+            "managerFilePatterns": [
+                "/^chart/values\\.yaml$/"
             ],
             "matchStrings": [
                 "repository:\\s*(?<depName>.+)\n.*\n\\s+tag:\\s*(?<currentValue>.+)"
